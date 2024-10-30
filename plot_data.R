@@ -1,26 +1,23 @@
 #Script to plot the logistic growth data
 
-growth_data <- read.csv("???")
 
 install.packages("ggplot2")
 library(ggplot2)
 
-ggplot(aes(t,N), data = ???) +
-  
+growth_data <- read.csv("experiment.csv")
+
+# Basic scatter plot of t vs N
+ggplot(aes(x = t, y = N), data = growth_data) +  # Replace 't' and 'N' with actual column names
   geom_point() +
-  
   xlab("t") +
-  
-  ylab("y") +
-  
+  ylab("population") +
   theme_bw()
 
-ggplot(aes(t,???), data = growth_data) +
-  
+
+# Log-transformed plot of t vs N
+ggplot(aes(x = t, y = N), data = growth_data) +  # Replace 't' and 'N' with actual column names
   geom_point() +
-  
   xlab("t") +
-  
-  ylab("y") +
-  
-  scale_y_continuous(trans='log10')
+  ylab("population") +
+  scale_y_continuous(trans = 'log10') +
+  theme_bw()
