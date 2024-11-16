@@ -7,17 +7,16 @@ library(ggplot2)
 growth_data <- read.csv("experiment.csv")
 
 # Basic scatter plot of t vs N
-ggplot(aes(x = t, y = N), data = growth_data) +  # Replace 't' and 'N' with actual column names
-  geom_point() +
-  xlab("t") +
-  ylab("population") +
+ggplot(aes(x = t, y = N), data = growth_data) + 
+  xlab("Time (minutes)") +
+  ylab("Population Size (N)") +
   theme_bw()
 
 
 # Log-transformed plot of t vs N
-ggplot(aes(x = t, y = N), data = growth_data) +  # Replace 't' and 'N' with actual column names
+ggplot(aes(x = t, y = N), data = growth_data) +  
   geom_point() +
-  xlab("t") +
-  ylab("population") +
+  xlab("Time (minutes)") +
+  ylab("Population Size (N)") +
   scale_y_continuous(trans = 'log10') +
   theme_bw()
