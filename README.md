@@ -35,7 +35,7 @@ ggplot(aes(x = t, y = N), data = growth_data) +
 
 To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
 
-[Scenario 1: $K \gg N_0$ and $t$ is small]{.underline}
+**Scenario 1:** $K \gg N_0$ **and** $t$ **is small**
 
 When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase).
 
@@ -92,7 +92,7 @@ $\ln(N_0)$ = 6.888
 
 Therefore, $N_0$ = $e^{6.888}$ = 980.44
 
-[Scenario 2: $N(t) = K$]{.underline}
+**Scenario 2:** $N(t) = K$
 
 As time ($t$) approaches infinity, the population size $N(t)$ can be assumed to reach the carrying capacity $K$. In this model, we use $t > 2250$ as this is the point when the population size begins to level off in the logistic growth curve.
 
@@ -102,7 +102,7 @@ $$
 N(t) = K + 0.t
 $$
 
-In this context, $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Therefore, when we are constructing a linear model, the x-variable is set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$).
+Here $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Therefore, when we are constructing a linear model, the x-variable is set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$).
 
 The code below filters the dataset for values where $t > 2500$, then applies a linear model to estimate $K$:
 
