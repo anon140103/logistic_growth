@@ -1,10 +1,10 @@
-# Load necessary packages
+
 install.packages("ggplot2")
 library(ggplot2)
 
-# Define parameters based on your analysis
+# Define parameters based on model
 N0 <- exp(6.888e+00)  # Initial population size derived from estimates
-r <- 1.002e-02           # Estimated growth rate
+r <- 1.002e-02        # Estimated growth rate
 K <- 5.979e+10        # Carrying capacity estimate
 
 # Define the logistic growth function
@@ -20,8 +20,13 @@ exp_fun <- function(t) {
 # Generate a sequence of time points for model predictions
 time_points <- seq(0, 5000, by = 10)
 
+# Create a data frame with predictions for both models
+model_data <- data.frame(
+  Time = time_points,
+  Logistic = sapply(time_points, logistic_fun),
+  Exponential = sapply(time_points, exp_fun)
+)
 
-# Plot the logistic and exponential growth models
 ggplot() +
   # Add logistic growth model as a line
   geom_line(aes(x = Time, y = Logistic), data = model_data, color = "#17BECF", size = 1.2) +
@@ -29,7 +34,7 @@ ggplot() +
   # Add exponential growth model as a line
   geom_line(aes(x = Time, y = Exponential), data = model_data, color = "#FF33CC", size = 1.2) +
   
-  # Add annotation for the logistic model
+  # Add label for the logistic model
   geom_text(
     aes(x = 2500, y = logistic_fun(1000), 
         label = "Logistic model"), 
@@ -39,7 +44,7 @@ ggplot() +
     size = 6  
   ) +
   
-  # Add annotation for the exponential model
+  # Add label for the exponential model
   geom_text(
     aes(x = 1700, y = exp_fun(1500), 
         label = "Exponential model"), 
@@ -49,10 +54,10 @@ ggplot() +
     size = 6  
   ) +
   
-  # Apply log scale to y-axis for better visualization
+  # Apply log scale to y-axis
   scale_y_continuous(trans = 'log10') +
   
-  # Customize plot appearance
+  # Customise plot 
   theme_minimal() +
   labs(
     title = "Comparison of Logistic and Exponential Growth Models",

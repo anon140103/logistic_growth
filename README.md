@@ -2,13 +2,13 @@
 
 (10 points) Annotate the README.md file in your logistic_growth repo with more detailed information about the analysis. Add a section on the results and include the estimates for N0, r and K (mention which \*.csv file you used).
 
-First, I need to import the data from the experiment.csv file downloaded from OSF:
+First, I need to import the data from the file downloaded from OSF:
 
 ```{r}
 growth_data <- read.csv("experiment.csv")
 ```
 
-1.  **PLOT THE DATA**
+1.  **Plot the data**
 
     When plotting the raw data with time in minutes on the x-axis (t) and the number of cells (N) on the y-axis, a characteristic S-shaped logistic growth curve is produced. The graph plateaus as it approaches the carrying capacity.
 
@@ -20,7 +20,7 @@ ggplot(aes(x = t, y = N), data = growth_data) +
   theme_bw()
 ```
 
-To visualise the growth rate patterns more clearly, a logarithmic transformation can be applied to the y variable (population size), resulting in a graph with a linear relationship between population size and time. This graph reveals a steady initial increase in growth rate, which slows as the population size approaches it carrying capacity and levels off.
+To look at the growth more easily over time, we can make a semi-log plot. This involves applying a logarithmic transformation to the y variable (population size). By doing this we produce a graph with a linear relationship between population size and time, which is easier to interpret. This graph reveals a steady initial increase in growth rate, which slows as the population size approaches it carrying capacity and levels off.
 
 ```{r}
 ggplot(aes(x = t, y = N), data = growth_data) + 
@@ -31,13 +31,13 @@ ggplot(aes(x = t, y = N), data = growth_data) +
   theme_bw()
 ```
 
-2.  **USE LINEAR APPROXIMATION TO ESTIMATE MODEL PARAMETERS**
+2.  **Fit linear model**
 
-To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can make certain assumptions to derive linear models:
+To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
 
-#### **Scenario 1:** $K \gg N_0$ **and** $t$ **is small**
+[Scenario 1: $K \gg N_0$ and $t$ is small]{.underline}
 
-When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is observed when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase).
+When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase).
 
 Using the logistic growth model, we can express $N(t)$ as:
 
@@ -69,7 +69,7 @@ $$
 y = c + mx
 $$
 
-Here, $y$ is $\ln(N)$, $x$ is $t$, $c$ corresponds to $\ln(N_0)$, and $m$ is the growth rate $r$. By fitting a linear model using $\ln(N)$ (referred to as N_log) against time $t$, we can estimate the intercept ($\ln(N_0)$) and the slope ($r$).
+Here, $y$ is $\ln(N)$, $x$ is $t$, $c$ corresponds to $\ln(N_0)$, and $m$ is the growth rate $r$. By fitting a linear model using $\ln(N)$ (N_log) against time, we can estimate the intercept ($\ln(N_0)$) and the slope ($r$).
 
 ```{r}
 # Scenario 1: When K >> N0 and t is small (early stage of growth)
@@ -84,7 +84,7 @@ summary(model1)
 
 ```
 
-From this model, we can see that:
+From the output of this model, we can see that:
 
 $r$ = 1.002e-2= 0.01002
 
@@ -92,17 +92,17 @@ $\ln(N_0)$ = 6.888
 
 Therefore, $N_0$ = $e^{6.888}$ = 980.44
 
-#### **Scenario 2:** $N(t) = K$
+[Scenario 2: $N(t) = K$]{.underline}
 
-As time ($t$) approaches infinity, the population size $N(t)$ can be assumed to reach the carrying capacity $K$. In this model, we consider $t > 2250$ since this range reflects when the population size begins to level off, as seen in the logistic growth curve.
+As time ($t$) approaches infinity, the population size $N(t)$ can be assumed to reach the carrying capacity $K$. In this model, we use $t > 2250$ as this is the point when the population size begins to level off in the logistic growth curve.
 
-To approximate this situation using a linear model, we can represent it as:
+To approximate this using a linear model, we can represent it as:
 
 $$
 N(t) = K + 0.t
 $$
 
-In this context, $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Thus, when constructing a linear model, the x-variable is simply set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$).
+In this context, $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Therefore, when we are constructing a linear model, the x-variable is set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$).
 
 The code below filters the dataset for values where $t > 2500$, then applies a linear model to estimate $K$:
 
@@ -123,9 +123,9 @@ $$
 K = 5.979 \times 10^{10}
 $$
 
-3.  **PLOT THE DATA TO ASSESS FIT TO MODEL**
+3.  **Plot data and assess the fit of the model**
 
-    The estimates derived from these linear approximations can now be used to create a logistic growth model. We can then be compare this to the actual growth data plotted in Step 1. By plotting the log-transformed data, we can more effectively compare the model with the observed data.
+    The estimates derived from these linear approximations can now be used to create a logistic growth model. We can then be compare this to the actual growth data plotted in Step 1. By plotting the log-transformed data, we can more compare the model with the observed data.
 
     ```{r}
 
@@ -156,29 +156,27 @@ $$
     Based on the estimates and fitting of the logistic growth model, we derived the key parameters:
 
     -   Initial Population Size ($N_0$):\
-        The estimated initial population size is approximately $N_0 = 980.44$, derived using an exponential transformation ($N_0 = \exp(6.888)$).
+        The estimated initial population size is approximately $N_0$ = $e^{6.888}$ = 980.44.
 
     -   Growth Rate ($r$):\
-        The growth rate was estimated to be $r = 0.001002$. This parameter represents how quickly the population increases over time before reaching the carrying capacity.
+        The growth rate was estimated to be $r = 0.001002$.
 
     -   Carrying Capacity ($K$):\
-        The carrying capacity was estimated to be $K = 5.979 \times 10^{10}$. This is the maximum population size that the environment can sustain, at which point the population growth levels off.
+        The carrying capacity was estimated to be $K = 5.979 \times 10^{10}$.
 
     **Model Fit to the Data:**
 
-    The logistic growth model was fitted to the actual growth data and visualised in the graph. The black points represent the actual observed population sizes over time, while the red curve represents the model's predictions using the estimated parameters.
-
-    As shown in the graph:
+    The logistic growth model was plotted alonsgide the actual growth data to assess the fit. The black points represent the observed population growth, while the red curve represents the model's predictions using the estimated parameters.
 
     1.  Exponential Growth Phase:\
         In the early stages, the population exhibits exponential growth, with the model's predictions closely following the observed data points.
 
     2.  Plateau at Carrying Capacity:\
-        As time progresses and the population approaches the carrying capacity ($K$), the growth rate slows down. The model successfully captures this transition, with the red line closely aligning with the data points as it approaches the asymptote.
+        As time progresses and the population approaches the carrying capacity, the growth rate slows. The model follows this transition, with the red line closely aligning with the data points as it approaches the asymptote.
 
     **Conclusion**
 
-    The logistic model demonstrates a strong fit to the empirical data, accurately reflecting the characteristic S-shaped curve of population growth. The close alignment between the model predictions and the observed data indicates that the parameter estimates ($N_0$, $r$, and $K$) are well-suited for describing the population dynamics in this context.
+    The logistic model demonstrates a strong fit to the empirical data, accurately reflecting the characteristic S-shaped curve of population growth. The close alignment between the model predictions and the observed data indicates that the parameter estimates ($N_0$, $r$, and $K$) are well-suited for describing the actual population growth of the bacteria.
 
 ## Question 2: Predicting Population Size Under Exponential Growth
 
@@ -201,35 +199,33 @@ $$
 N(t) = 980.44 \times e^{0.01002 \times 4980}
 $$
 
-Calculating this gives us:
+Which gives us:
 
 $$
 N(t) = 4.598 \times 10^{24}
 $$
 
-This result shows that, under exponential growth, the population would theoretically reach an astronomically high value of $4.598 \times 10^{24}$ at $t = 4980$ minutes. However, this is unrealistic in real-world scenarios because resources are limited.
+This result shows that, under exponential growth, the population size would theoretically reach $4.598 \times 10^{24}$ at $t = 4980$ minutes. However, this is unrealistic because in reality resources are limited.
 
 **Comparison with the Logistic Growth Model**
 
-For the logistic growth model, which accounts for a carrying capacity, the equation used is:
+For the logistic growth model, which accounts for a carrying capacity and resource limitation, the equation used is:
 
 $$
 N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}}
 $$
 
-Given our parameters:
+We can substitute our parameters derived from the linear models into the logistic equation:
 
 -   Initial population size ($N_0$): $e^{6.888}$
 -   Growth rate ($r$): 0.01002
 -   Carrying capacity ($K$): $5.979 \times 10^{10}$
 
-We can substitute these values into the logistic equation:
-
 $$
-N(t) = \frac{(5.979 \times 10^{10}) \times 980.44 \times e^{0.01002 \times 4980}}{(5.979 \times 10^{10}) - 980.44 + 980.44 \times e^{0.01002 \times 4980}}
+N(t) = \frac{(5.979 \times 10^{10}) \times (e^{6.888}) \times (e^{0.01002 \times 4980})}{(5.979 \times 10^{10}) - (e^{6.888}) + (e^{6.888} \times e^{0.01002 \times 4980})}
 $$
 
-After calculating, we find:
+Which gives us:
 
 $$
 N(t) = 5.979 \times 10^{10} = K
@@ -237,14 +233,10 @@ $$
 
 **Interpretation of the Results**
 
-1.  Logistic Growth:
-    -   At $t = 4980$ minutes, the population has reached its carrying capacity of $5.979 \times 10^{10}$. At this point, the growth rate slows down and stabilises, as the environment can no longer support further population increase due to limited resources.
-2.  Exponential Growth:
-    -   Under exponential growth, the population continues to grow unchecked. At the same time point ($t = 4980$ minutes), the population size would reach an impractical value of $4.598 \times 10^{24}$. This happens because exponential growth does not consider resource limitations, leading to unsustainable growth rates.
-
-**Conclusion**
-
-The logistic model, which includes the concept of carrying capacity, provides a much more realistic representation of population dynamics compared to the exponential model. While exponential growth assumes unlimited resources, the logistic model accurately captures the slowdown in growth as resources become constrained, resulting in a plateau at the carrying capacity.
+1.  Exponential Growth:
+    -   Under exponential growth, the population continues to grow unchecked. At the $t = 4980$ minutes, the population size would reach $4.598 \times 10^{24}$. This is because exponential growth does not consider resource limitations, leading to unsustainable growth rates.
+2.  Logistic Growth:
+    -   At $t = 4980$ minutes, the population has reached its carrying capacity of $5.979 \times 10^{10}$. At this point, the growth rate of the population is 0, as the environment can no longer support further growth due to limited resources.
 
 ## Question 3: Comparing Exponential and Logistic Growth Curves
 
