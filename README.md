@@ -1,7 +1,5 @@
 ## **Question 1: Analysis**
 
-(10 points) Annotate the README.md file in your logistic_growth repo with more detailed information about the analysis. Add a section on the results and include the estimates for N0, r and K (mention which \*.csv file you used).
-
 First, I need to import the data from the file downloaded from OSF:
 
 ```{r}
@@ -51,7 +49,7 @@ $$
 K - N_0 + N_0 e^{rt} \approx K
 $$
 
-Thus, the expression simplifies to:
+So, the expression simplifies to:
 
 $$
 N(t) \approx N_0 e^{rt}
@@ -80,7 +78,7 @@ data_subset1 <- growth_data %>% filter(t < 1250) %>% mutate(N_log = log(N))
 model1 <- lm(N_log ~ t, data = data_subset1)
 summary(model1)
 
-#The output of this will give you the value for r, the initial growth (the t estimate value), and the natural log of the size of the population at t=0 (the Intercept estimate value)
+#The output of this will gives the value for r, the initial growth (the t estimate value), and the natural log of the size of the population at t=0 (the Intercept estimate value)
 
 ```
 
@@ -125,7 +123,7 @@ $$
 
 3.  **Plot data and assess the fit of the model**
 
-    The estimates derived from these linear approximations can now be used to create a logistic growth model. We can then be compare this to the actual growth data plotted in Step 1. By plotting the log-transformed data, we can compare the model with the observed data.
+    The estimates derived from these linear approximations can now be used to create a logistic growth model. We can then compare this to the actual growth data plotted in Step 1. By plotting the log-transformed data, we can compare the model with the observed data.
 
     ```{r}
 
@@ -176,11 +174,9 @@ $$
 
     **Conclusion**
 
-    The logistic model demonstrates a strong fit to the empirical data, accurately reflecting the characteristic S-shaped curve of population growth. The close alignment between the model predictions and the observed data indicates that the parameter estimates ($N_0$, $r$, and $K$) are well-suited for describing the actual population growth of the bacteria.
+    The logistic model demonstrates a strong fit to the empirical data, accurately reflecting the characteristic S-shaped curve of population growth. The close alignment between the model predictions and the observed data indicates that the parameter estimates ($N_0$, $r$, and $K$) are appropriate for describing the actual population growth of the bacteria.
 
 ## Question 2: Predicting Population Size Under Exponential Growth
-
-(**10 points**) Use your estimates of N0 and r to calculate the population size at t = 4980 min, assuming that the population grows exponentially. How does it compare to the population size predicted under logistic growth?
 
 An exponential growth model is represented by the equation:
 
@@ -188,12 +184,10 @@ $$
 N(t) = N_0 e^{rt}
 $$
 
-Using the parameter values obtained from our earlier analysis:
+We can substitute the parameter values we derived from our linear model into the exponential growth formula:
 
 -   Initial population size ($N_0$): $e^{6.888}$ = 980.44
 -   Growth rate ($r$): 0.01002
-
-We can substitute these values into the exponential growth formula:
 
 $$
 N(t) = 980.44 \times e^{0.01002 \times 4980}
