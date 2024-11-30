@@ -6,6 +6,7 @@ growth_data <- read.csv("experiment.csv")
 
 # Basic scatter plot of t vs N
 ggplot(aes(x = t, y = N), data = growth_data) + 
+  geom_point() +
   xlab("Time (minutes)") +
   ylab("Population Size (N)") +
   theme_bw()
