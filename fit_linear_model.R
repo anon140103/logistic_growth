@@ -1,6 +1,3 @@
-#Script to estimate the model parameters using a linear approximation
-
-#library(dplyr)
 
 library(dplyr)
 
@@ -14,7 +11,7 @@ data_subset1 <- growth_data %>% filter(t < 1250) %>% mutate(N_log = log(N))
 model1 <- lm(N_log ~ t, data = data_subset1)
 summary(model1)
 
-#The output of this will give you the value for r, the initial growth (the t estimate value), 
+#The output of this will give us the value for r (the t estimate value), 
 #and the natural log of the size of the population at t=0 (the Intercept estimate value)
 
 

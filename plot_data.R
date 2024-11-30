@@ -1,5 +1,3 @@
-#Script to plot the logistic growth data
-
 
 install.packages("ggplot2")
 library(ggplot2)

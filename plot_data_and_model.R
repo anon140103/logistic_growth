@@ -1,4 +1,3 @@
-#Script to plot data and model
 
 install.packages(ggplot)
 library("ggplot2")
