@@ -18,6 +18,8 @@ ggplot(aes(x = t, y = N), data = growth_data) +
   theme_bw()
 ```
 
+![](Scatter_Plot.png)
+
 To look at the growth more easily over time, we can make a semi-log plot. This involves applying a logarithmic transformation to the y variable (population size). By doing this we produce a graph with a linear relationship between population size and time, which is easier to interpret. This graph reveals a steady initial increase in growth rate, which slows as the population size approaches it carrying capacity and levels off.
 
 ```{r}
@@ -27,7 +29,10 @@ ggplot(aes(x = t, y = N), data = growth_data) +
   ylab("Population Size (N)") +
   scale_y_continuous(trans = 'log10') +
   theme_bw()
+
 ```
+
+![](Log_Transformed_Plot.png)
 
 2.  **Fit linear model**
 
@@ -70,7 +75,6 @@ $$
 Here, $y$ is $\ln(N)$, $x$ is $t$, $c$ corresponds to $\ln(N_0)$, and $m$ is the growth rate $r$. By fitting a linear model using $\ln(N)$ (N_log) against time, we can estimate the intercept, $\ln(N_0)$, and the slope, $r$.
 
 ```{r}
-# Scenario 1: When K >> N0 and t is small (early stage of growth)
 #Create a data subset with filtered values of t<1250, and a log transformed y axis
 data_subset1 <- growth_data %>% filter(t < 1250) %>% mutate(N_log = log(N)) 
 
@@ -147,7 +151,10 @@ $$
       ylab("Population Size (N)")
 
 
+
     ```
+
+    ![](Model_Fit_to_Data.png)
 
 4.  **RESULTS**
 
