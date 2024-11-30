@@ -27,14 +27,10 @@ model_data <- data.frame(
   Exponential = sapply(time_points, exp_fun)
 )
 
+#plot the comparison
 ggplot() +
-  # Add logistic growth model as a line
   geom_line(aes(x = Time, y = Logistic), data = model_data, color = "#17BECF", size = 1.2) +
-  
-  # Add exponential growth model as a line
   geom_line(aes(x = Time, y = Exponential), data = model_data, color = "#FF33CC", size = 1.2) +
-  
-  # Add label for the logistic model
   geom_text(
     aes(x = 2500, y = logistic_fun(1000), 
         label = "Logistic model"), 
@@ -43,8 +39,6 @@ ggplot() +
     hjust = -0.25, 
     size = 6  
   ) +
-  
-  # Add label for the exponential model
   geom_text(
     aes(x = 1700, y = exp_fun(1500), 
         label = "Exponential model"), 
@@ -53,11 +47,7 @@ ggplot() +
     hjust = 0.6, 
     size = 6  
   ) +
-  
-  # Apply log scale to y-axis
   scale_y_continuous(trans = 'log10') +
-  
-  # Customise plot 
   theme_minimal() +
   labs(
     title = "Comparison of Logistic and Exponential Growth Models",
