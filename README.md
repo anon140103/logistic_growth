@@ -78,7 +78,7 @@ data_subset1 <- growth_data %>% filter(t < 1250) %>% mutate(N_log = log(N))
 model1 <- lm(N_log ~ t, data = data_subset1)
 summary(model1)
 
-#The output of this will gives the value for r, the initial growth (the t estimate value), and the natural log of the size of the population at t=0 (the Intercept estimate value)
+#The output of this will gives the value for r (the t estimate value), and the natural log of the size of the population at t=0 (the Intercept estimate value)
 
 ```
 
@@ -233,7 +233,5 @@ $$
     -   At $t = 4980$ minutes, the population has reached its carrying capacity of $5.979 \times 10^{10}$. At this point, the growth rate of the population is 0, as the environment can no longer support further growth due to limited resources.
 
 ## Question 3: Comparing Exponential and Logistic Growth Curves
-
-(**20 points**) Add an R script to your repository that makes a graph comparing the exponential and logistic growth curves (using the same parameter estimates you found). Upload this graph to your repo and include it in the **README.md** file so it can be viewed in the repo homepage.
 
 ![](growth_models_comparison.png)
