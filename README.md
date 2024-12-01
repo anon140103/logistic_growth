@@ -40,11 +40,11 @@ $$
 
 By fitting a linear model we can estimate the intercept, $\ln(N_0)$, and the slope, $r$:
 
-$r$ = 1.002e-2 = 0.01002
+- $r$ = 1.002e-2 = 0.01002
 
-$\ln(N_0)$ = 6.888
+- $\ln(N_0)$ = 6.888
 
-Therefore, $N_0$ = $e^{6.888}$ = 980.44
+- Therefore, $N_0$ = $e^{6.888}$ = 980.44
 
 **Assumption 2: $N(t) = K$**
 
@@ -58,9 +58,7 @@ $$
 
 Here $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Therefore, when we are constructing a linear model, the x-variable is set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$):
 
-$$
-K = 5.979 \times 10^{10}
-$$
+- $$K = 5.979 \times 10^{10}$$
 
 3.  **Plot data and assess the fit of the model**
 
