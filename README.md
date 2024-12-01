@@ -4,7 +4,7 @@
 
 ## **Question 1: Analysis**
 
-1.  **Plot the data**
+### 1.  **Plot the data**
 
     When plotting the raw data with time in minutes on the x-axis (t) and the number of cells (N) on the y-axis, a characteristic S-shaped logistic growth curve is produced. The graph plateaus as it approaches the carrying capacity.
 
@@ -14,7 +14,7 @@ To look at the growth more easily over time, we can make a semi-log plot. This i
 
 ![](Log_Transformed_Plot.png)
 
-2.  **Fit linear model**
+### 2.  **Fit linear model**
    
    To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
 
@@ -60,13 +60,13 @@ Here $y$ corresponds to $N(t)$, which remains constant and does not depend on an
 
 - $$K = 5.979 \times 10^{10}$$
 
-3.  **Plot data and assess the fit of the model**
+### 3.  **Plot data and assess the fit of the model**
 
     The estimates derived from these linear approximations can now be used to create a logistic growth model. We can then compare this to the actual growth data plotted in Step 1. By plotting the log-transformed data, we can compare the model with the observed data.
 
     ![](Model_Fit_to_Data.png)
 
-4.  **Results**
+### 4.  **Results**
 
     Based on the estimates and fitting of the logistic growth model, we derived the key parameters:
 
