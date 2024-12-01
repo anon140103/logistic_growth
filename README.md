@@ -10,17 +10,17 @@
 
 ![](Scatter_Plot.png)
 
-    To look at the growth more easily over time, we can make a semi-log plot. This involves applying a logarithmic transformation to the y variable (population size). By doing this we produce a graph with a linear relationship between population size and time, which is easier to interpret. This graph reveals a steady initial increase in growth rate, which slows as the population size approaches it carrying capacity and levels off.
+To look at the growth more easily over time, we can make a semi-log plot. This involves applying a logarithmic transformation to the y variable (population size). By doing this we produce a graph with a linear relationship between population size and time, which is easier to interpret. This graph reveals a steady initial increase in growth rate, which slows as the population size approaches it carrying capacity and levels off.
 
 ![](Log_Transformed_Plot.png)
 
 2.  **Fit linear model**
 
-    To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
+To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
 
     **Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
 
-    When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase). By using this assumption we can simplify the logistic growth equation
+When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase). By using this assumption we can simplify the logistic growth equation
 
 $$
 N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}}
@@ -32,31 +32,31 @@ $$
 \ln(N) = \ln(N_0) + rt
 $$
 
-    This is equivalent to a straight-line equation of the form:
+This is equivalent to a straight-line equation of the form:
 
 $$
 y = c + mx
 $$
 
-    Here, $y$ is $\ln(N)$, $x$ is $t$, $c$ corresponds to $\ln(N_0)$, and $m$ is the growth rate $r$. By fitting a linear model we can estimate the intercept, $\ln(N_0)$, and the slope, $r$. From the output of this model, we can see that:
+Here, $y$ is $\ln(N)$, $x$ is $t$, $c$ corresponds to $\ln(N_0)$, and $m$ is the growth rate $r$. By fitting a linear model we can estimate the intercept, $\ln(N_0)$, and the slope, $r$. From the output of this model, we can see that:
 
 $r$ = 1.002e-2 = 0.01002
 
 $\ln(N_0)$ = 6.888
 
-    Therefore, $N_0$ = $e^{6.888}$ = 980.44
+Therefore, $N_0$ = $e^{6.888}$ = 980.44
 
-    **Assumption 2: $N(t) = K$**
+**Assumption 2: $N(t) = K$**
 
-    As time ($t$) approaches infinity, the population size $N(t)$ can be assumed to reach the carrying capacity $K$. In this model, we use $t > 2250$ as this is the point when the population size begins to level off in the logistic growth curve.
+As time ($t$) approaches infinity, the population size $N(t)$ can be assumed to reach the carrying capacity $K$. In this model, we use $t > 2250$ as this is the point when the population size begins to level off in the logistic growth curve.
 
-    To approximate this using a linear model, we can represent it as:
+To approximate this using a linear model, we can represent it as:
 
 $$
 N(t) = K + 0.t
 $$
 
-    Here $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Therefore, when we are constructing a linear model, the x-variable is set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$). From this model, we can see that:
+Here $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Therefore, when we are constructing a linear model, the x-variable is set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$). From this model, we can see that:
 
 $$
 K = 5.979 \times 10^{10}
