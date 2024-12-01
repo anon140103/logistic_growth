@@ -118,7 +118,7 @@ We can substitute our parameters derived from the linear models into the logisti
 -   Growth rate ($r$): 0.01002
 -   Carrying capacity ($K$): $5.979 \times 10^{10}$
 
-$$N(t) = \frac{(5.979 \times 10^{10}) \times (e^{6.888}) \times (e^{0.01002 \times 4980})}{(5.979 \times 10^{10}) - (e^{6.888}) + (e^{6.888} \times e^{0.01002 \times 4980})}$$ = $$5.979 \times 10^{10} = K$$
+$$N(t) = \frac{(5.979 \times 10^{10}) \times (e^{6.888}) \times (e^{0.01002 \times 4980})}{(5.979 \times 10^{10}) - (e^{6.888}) + (e^{6.888} \times e^{0.01002 \times 4980})} = 5.979 \times 10^{10} = K$$
 
 **Interpretation of the Results**
 
