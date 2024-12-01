@@ -100,7 +100,7 @@ We can substitute the parameter values we derived from our linear model into the
 -   Initial population size ($N_0$): $e^{6.888}$ = 980.44
 -   Growth rate ($r$): 0.01002
 
-$N(t) = 980.44 \times e^{0.01002 \times 4980}$ = $4.598 \times 10^{24}$
+$$N(t) = 980.44 \times e^{0.01002 \times 4980}$$ = $4.598 \times 10^{24}$
 
 This result shows that, under exponential growth, the population size would theoretically reach $4.598 \times 10^{24}$ at $t = 4980$ minutes. However, this is unrealistic because in reality resources are limited.
 
