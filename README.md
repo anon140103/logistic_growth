@@ -100,15 +100,7 @@ We can substitute the parameter values we derived from our linear model into the
 -   Initial population size ($N_0$): $e^{6.888}$ = 980.44
 -   Growth rate ($r$): 0.01002
 
-$$
-N(t) = 980.44 \times e^{0.01002 \times 4980}
-$$
-
-Which gives us:
-
-$$
-N(t) = 4.598 \times 10^{24}
-$$
+$$N(t) = 980.44 \times e^{0.01002 \times 4980}$$ = $$N(t) = 4.598 \times 10^{24}$$
 
 This result shows that, under exponential growth, the population size would theoretically reach $4.598 \times 10^{24}$ at $t = 4980$ minutes. However, this is unrealistic because in reality resources are limited.
 
@@ -126,15 +118,7 @@ We can substitute our parameters derived from the linear models into the logisti
 -   Growth rate ($r$): 0.01002
 -   Carrying capacity ($K$): $5.979 \times 10^{10}$
 
-$$
-N(t) = \frac{(5.979 \times 10^{10}) \times (e^{6.888}) \times (e^{0.01002 \times 4980})}{(5.979 \times 10^{10}) - (e^{6.888}) + (e^{6.888} \times e^{0.01002 \times 4980})}
-$$
-
-Which gives us:
-
-$$
-N(t) = 5.979 \times 10^{10} = K
-$$
+$$N(t) = \frac{(5.979 \times 10^{10}) \times (e^{6.888}) \times (e^{0.01002 \times 4980})}{(5.979 \times 10^{10}) - (e^{6.888}) + (e^{6.888} \times e^{0.01002 \times 4980})}$$ = $$N(t) = 5.979 \times 10^{10} = K$$
 
 **Interpretation of the Results**
 
