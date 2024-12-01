@@ -10,16 +10,16 @@
 
 ![](Scatter_Plot.png)
 
-> To look at the growth more easily over time, we can make a semi-log plot. This involves applying a logarithmic transformation to the y variable (population size). By doing this we produce a graph with a linear relationship between population size and time, which is easier to interpret. This graph reveals a steady initial increase in growth rate, which slows as the population size approaches it carrying capacity and levels off.
+   To look at the growth more easily over time, we can make a semi-log plot. This involves applying a logarithmic transformation to the y variable (population size). By doing this we produce a graph with a linear relationship between population size and time, which is easier to interpret. This graph reveals a steady initial increase in growth rate, which slows as the population size approaches it carrying capacity and levels off.
 
 ![](Log_Transformed_Plot.png)
 
 2.  **Fit linear model**
    To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
 
-> **Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
+**Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
 
-> When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$). By using this assumption we can simplify the logistic growth equation
+When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$). By using this assumption we can simplify the logistic growth equation
 
 $$
 N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}}
