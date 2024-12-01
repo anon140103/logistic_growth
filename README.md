@@ -17,7 +17,7 @@
 2.  **Fit linear model**
    To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
 
-**Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
+   **Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
 
 When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$). By using this assumption we can simplify the logistic growth equation
 
