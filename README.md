@@ -156,7 +156,7 @@ $$
 
     ![](Model_Fit_to_Data.png)
 
-4.  **RESULTS**
+4.  **Results**
 
     Based on the estimates and fitting of the logistic growth model, we derived the key parameters:
 
