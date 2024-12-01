@@ -226,6 +226,6 @@ $$
     -   At $t = 4980$ minutes, the population has reached its carrying capacity of $5.979 \times 10^{10}$. At this point, the growth rate of the population is 0, as the environment can no longer support further growth due to limited resources.
 
 ## Question 3: Comparing Exponential and Logistic Growth Curves
-Code in compare_growth_models.R in repository.
+Code can be found in compare_growth_models.R in repository.
 
 ![](growth_models_comparison.png)
