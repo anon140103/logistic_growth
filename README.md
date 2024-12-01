@@ -38,29 +38,15 @@ ggplot(aes(x = t, y = N), data = growth_data) +
 
 To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
 
-**Scenario 1:** $K \gg N_0$ **and** $t$ **is small**
+**Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
 
-When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase).
-
-Using the logistic growth model, we can express $N(t)$ as:
+When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase). By using this assumptio we can simplify the logistic growth equation
 
 $$
 N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}}
 $$
 
-For small values of $t$, we can simplify the equation by approximating:
-
-$$
-K - N_0 + N_0 e^{rt} \approx K
-$$
-
-So, the expression simplifies to:
-
-$$
-N(t) \approx N_0 e^{rt}
-$$
-
-Taking the logarithm of both sides yields a linear form:
+to
 
 $$
 \ln(N) = \ln(N_0) + rt
@@ -94,7 +80,7 @@ $\ln(N_0)$ = 6.888
 
 Therefore, $N_0$ = $e^{6.888}$ = 980.44
 
-**Scenario 2:** $N(t) = K$
+**Assumption 2:** $N(t) = K$
 
 As time ($t$) approaches infinity, the population size $N(t)$ can be assumed to reach the carrying capacity $K$. In this model, we use $t > 2250$ as this is the point when the population size begins to level off in the logistic growth curve.
 
