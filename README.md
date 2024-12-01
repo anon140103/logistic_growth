@@ -16,23 +16,20 @@ To look at the growth more easily over time, we can make a semi-log plot. This i
 
 ### 2.  **Fit linear model**
    
-   To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
+To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
 
 **Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
 
-When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$). By using this assumption we can simplify the logistic growth equation
+- When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially.
+- This is seen when $t$ is small (e.g., $t < 1250$).
+- By using this assumption we can simplify the logistic growth equation:
 
 $$
-N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}}
+N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}} \quad\to\quad \ln(N) = \ln(N_0) + rt
 $$
 
-to
 
-$$
-\ln(N) = \ln(N_0) + rt
-$$
-
-This is equivalent to a straight-line equation of the form:
+- This is equivalent to a straight-line equation of the form:
 
 $$
 y = c + mx
@@ -42,50 +39,43 @@ By fitting a linear model we can estimate the intercept, $\ln(N_0)$, and the slo
 
 - $r$ = 1.002e-2 = 0.01002
 
-- $\ln(N_0)$ = 6.888
+- $\ln(N_0)$ = 6.888 $\quad\therefore\quad N_0 = e^{6.888}$ = 980.44
 
-- Therefore, $N_0$ = $e^{6.888}$ = 980.44
 
 **Assumption 2: $N(t) = K$**
 
-As time ($t$) approaches infinity, the population size $N(t)$ can be assumed to reach the carrying capacity $K$. In this model, we use $t > 2250$ as this is the point when the population size begins to level off in the logistic growth curve.
+- As time ($t$) approaches infinity, the population size $N(t)$ can be assumed to reach the carrying capacity $K$.
+- In this model, we use $t > 2250$ as this is the point when the population size begins to level off in the logistic growth curve.
 
-To approximate this using a linear model, we can represent it as:
+- To approximate this using a linear model, we can represent it as:
 
 $$
 N(t) = K + 0.t
 $$
 
-Here $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Therefore, when we are constructing a linear model, the x-variable is set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$):
+This linear model’s intercept will represent the carrying capacity ($K$):
 
 - $$K = 5.979 \times 10^{10}$$
 
 ### 3.  **Plot data and assess the fit of the model**
 
-    The estimates derived from these linear approximations can now be used to create a logistic growth model. We can then compare this to the actual growth data plotted in Step 1. By plotting the log-transformed data, we can compare the model with the observed data.
+The estimates derived from these linear approximations can now be used to create a logistic growth model (red curve). We can then compare this to the actual growth data plotted in Step 1 (black dots) to assess its fit.
 
-    ![](Model_Fit_to_Data.png)
+![](Model_Fit_to_Data.png)
 
 ### 4.  **Results**
 
-    Based on the estimates and fitting of the logistic growth model, we derived the key parameters:
+**i. Parameter Estimates:**
 
-    - The estimated initial population size is $N_0$ = $e^{6.888}$ = 980.44.
+Based on two linear models, we derived the key parameters:
 
-    - The esitmated growth rate is $r = 0.001002$.
+- The estimated initial population size is $N_0$ = $e^{6.888}$ = 980.44
+- The esitmated growth rate is $r = 0.001002$
+- The estimated carrying capacity is $K = 5.979 \times 10^{10}$
 
-    - The estimated carrying capacity is $K = 5.979 \times 10^{10}$.
+**ii. Model Fit to the Data:**
 
-    **Model Fit to the Data:**
-
-    The logistic growth model was plotted with the actual growth data to assess its fit. The black points represent the observed population growth, while the red curve represents the model's predictions using the estimated parameters.
-
-    1.  Exponential Growth Phase:\
-        In the early stages, the population exhibits exponential growth, with the model's predictions closely following the observed data points.
-
-    2.  Plateau at Carrying Capacity:\
-        As time progresses and the population approaches the carrying capacity, the growth rate slows. The model follows this transition, with the red line closely aligning with the data points as it approaches the asymptote.
-
+The logistic growth model was plotted with the actual growth data to assess its fit. The black points represent the observed population growth, while the red curve represents the model's predictions using the estimated parameters. As we can see, the model shows a close fit to the data, indicating that the estimated parameters are appropriate to describe this bacterial population's growth.
 
 ## Question 2: Predicting Population Size Under Exponential Growth
 
