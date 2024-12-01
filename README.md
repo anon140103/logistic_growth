@@ -1,10 +1,8 @@
+- We are given a test tube containing 900 μl of growth media and 100 μl of Escherichia coli isolate, making a total volume of 1 ml.
+- The bacteria initially multiply rapidly due to the abundance of resources in the test tube. As resources become scarce, the growth rate decreases, and the population eventually stabilises at the carrying capacity.
+- The aim of this experiment is to estimate the initial population size, the growth rate, and the carrying capacity of the bacteria using experimental data.
+
 ## **Question 1: Analysis**
-
-First, I need to import the data from the file downloaded from OSF:
-
-```{r}
-growth_data <- read.csv("experiment.csv")
-```
 
 1.  **Plot the data**
 
