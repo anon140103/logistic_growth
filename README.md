@@ -39,6 +39,7 @@ y = c + mx
 $$
 
 By fitting a linear model we can estimate the intercept, $\ln(N_0)$, and the slope, $r$:
+
 $r$ = 1.002e-2 = 0.01002
 
 $\ln(N_0)$ = 6.888
