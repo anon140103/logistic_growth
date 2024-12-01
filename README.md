@@ -18,7 +18,7 @@ To look at the growth more easily over time, we can make a semi-log plot. This i
 
 To estimate the initial population size ($N_0$), carrying capacity ($K$), and growth rate ($r$), we can fit a linear model, by making some assumptions:
 
-    **Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
+**Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
 
 When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase). By using this assumption we can simplify the logistic growth equation
 
