@@ -40,7 +40,7 @@ To estimate the initial population size ($N_0$), carrying capacity ($K$), and gr
 
 **Assumption 1:** $K \gg N_0$ **and** $t$ **is small**
 
-When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase). By using this assumptio we can simplify the logistic growth equation
+When the initial population size ($N_0$) is significantly smaller than the carrying capacity ($K$), the population initially grows exponentially. This is seen when $t$ is small (e.g., $t < 1250$, the point at which population growth starts to rapidly increase). By using this assumption we can simplify the logistic growth equation
 
 $$
 N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}}
@@ -58,7 +58,7 @@ $$
 y = c + mx
 $$
 
-Here, $y$ is $\ln(N)$, $x$ is $t$, $c$ corresponds to $\ln(N_0)$, and $m$ is the growth rate $r$. By fitting a linear model using $\ln(N)$ (N_log) against time, we can estimate the intercept, $\ln(N_0)$, and the slope, $r$.
+Here, $y$ is $\ln(N)$, $x$ is $t$, $c$ corresponds to $\ln(N_0)$, and $m$ is the growth rate $r$. By fitting a linear model we can estimate the intercept, $\ln(N_0)$, and the slope, $r$.
 
 ```{r}
 #Create a data subset with filtered values of t<1250, and a log transformed y axis
@@ -74,7 +74,7 @@ summary(model1)
 
 From the output of this model, we can see that:
 
-$r$ = 1.002e-2= 0.01002
+$r$ = 1.002e-2 = 0.01002
 
 $\ln(N_0)$ = 6.888
 
