@@ -123,9 +123,12 @@ $$N(t) = \frac{(5.979 \times 10^{10}) \times (e^{6.888}) \times (e^{0.01002 \tim
 **Interpretation of the Results**
 
 1.  Exponential Growth:
-    -   Under exponential growth, the population continues to grow unchecked. At the $t = 4980$ minutes, the population size would reach $4.598 \times 10^{24}$. This is because exponential growth does not consider resource limitations, leading to unsustainable growth rates.
+    -   Under exponential growth, the population continues to grow unchecked.
+    -   At  $t = 4980$ minutes, the population size would reach $4.598 \times 10^{24}$.
+    -   This is because exponential growth does not consider resource limitations, leading to unsustainable growth rates.
 2.  Logistic Growth:
-    -   At $t = 4980$ minutes, the population has reached its carrying capacity of $5.979 \times 10^{10}$. At this point, the growth rate of the population is 0, as the environment can no longer support further growth due to limited resources.
+    -   At $t = 4980$ minutes, the population has reached its carrying capacity of $5.979 \times 10^{10}$.
+    -   At this point, the growth rate of the population is 0, as the environment can no longer support further growth due to limited resources.
 
 ## Question 3: Comparing Exponential and Logistic Growth Curves
 Code can be found in compare_growth_models.R in repository.
