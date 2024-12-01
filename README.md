@@ -38,8 +38,7 @@ $$
 y = c + mx
 $$
 
-Here, $y$ is $\ln(N)$, $x$ is $t$, $c$ corresponds to $\ln(N_0)$, and $m$ is the growth rate $r$. By fitting a linear model we can estimate the intercept, $\ln(N_0)$, and the slope, $r$. From the output of this model, we can see that:
-
+Here, $y$ is $\ln(N)$, $x$ is $t$, $c$ corresponds to $\ln(N_0)$, and $m$ is the growth rate $r$. By fitting a linear model we can estimate the intercept, $\ln(N_0)$, and the slope, $r$:
 $r$ = 1.002e-2 = 0.01002
 
 $\ln(N_0)$ = 6.888
@@ -56,7 +55,7 @@ $$
 N(t) = K + 0.t
 $$
 
-Here $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Therefore, when we are constructing a linear model, the x-variable is set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$). From this model, we can see that:
+Here $y$ corresponds to $N(t)$, which remains constant and does not depend on any other variable. Therefore, when we are constructing a linear model, the x-variable is set to 1, and there is no gradient as the population size is not changing. The linear model’s intercept will represent the carrying capacity ($K$):
 
 $$
 K = 5.979 \times 10^{10}
@@ -72,14 +71,11 @@ $$
 
     Based on the estimates and fitting of the logistic growth model, we derived the key parameters:
 
-    -   Initial Population Size ($N_0$):\
-        The estimated initial population size is $N_0$ = $e^{6.888}$ = 980.44.
+    - The estimated initial population size is $N_0$ = $e^{6.888}$ = 980.44.
 
-    -   Growth Rate ($r$):\
-        The esitmated growth rate is $r = 0.001002$.
+    - The esitmated growth rate is $r = 0.001002$.
 
-    -   Carrying Capacity ($K$):\
-        The estimated carrying capacity is $K = 5.979 \times 10^{10}$.
+    - The estimated carrying capacity is $K = 5.979 \times 10^{10}$.
 
     **Model Fit to the Data:**
 
